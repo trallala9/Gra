@@ -33,7 +33,6 @@ var newGameElem = document.getElementById('js-newGameElement'),
     pickElem = document.getElementById('js-playerPickElement'),
     resultsElem = document.getElementById('js-resultsTableElement');
 /*Wcześniej zdefiniowaliśmy zmienną gameState. Decydujemy, że może ona przyjąć kilka wartości - zależnie od tego, czy gra nie została jeszcze rozpoczęta, jest w trakcie czy została zakończona chcemy wyświetlić różne elementy na stronie.
-
 Dlaczego nie stworzyć na to funkcji?*/
 function setGameElements() {
     switch (gameState) {
@@ -43,7 +42,7 @@ function setGameElements() {
             resultsElem.style.display = 'block';
             break;
         case 'ended':
-            newGameBtn.innerText = 'Jeszcze raz';
+            newGameBtn.innerText = 'Play again';
         case 'notStarted':
         default:
             newGameElem.style.display = 'block';
@@ -61,7 +60,7 @@ var playerPointsElem = document.getElementById('js-playerPoints'),
     computerPointsElem = document.getElementById('js-computerPoints');
 /*Dalej definiujemy funkcję, która będzie uruchamiana po wciśnięciu przycisku "New Game" / "Play Again"*/
 function newGame() {
-    player.name = prompt('Please enter your name', 'imię gracza');
+    player.name = prompt('Please enter your name', 'Your name');
     if (player.name) {
         player.score = computer.score = 0;
         gameState = 'started';
@@ -155,7 +154,9 @@ function checkRoundWinner(playerPick, computerPick) {
         computerResultElem.innerHTML = "Win!";
         computer.score++;
     }
-
+    setGamePoints();
+    if ((player.score == 10) || (computer.score == 10))
+        winnerGame();
 }
 
 function setGamePoints() {
@@ -167,14 +168,12 @@ function winnerGame() {
     if (player.score === 10) {
         gameState = 'ended';
         setGameElements();
-
-        alert('Wygrał gracz: ' + player.name);
+        alert('The winner is: ' + player.name);
         console.log('Wygrał gracz: ' + player.name);
     } else if (computer.score === 10) {
         gameState = 'ended';
-
         setGameElements();
-        alert('Wygrał komputer');
+        alert('Computer won!');
         console.log('Wygrał komputer');
     }
 }

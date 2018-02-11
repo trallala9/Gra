@@ -1,7 +1,82 @@
+body {
+
+    background-image: url('http://static.wirtualnemedia.pl/media/top/android-spot-papiernozycekamien655.jpg');
+    background-size: cover;
+
+}
+
 #js-newGameElement {
-    padding: 20px;
+    padding: 7px;
+    border: 1px solid yellow;
+    background-color: darksalmon;
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+
 }
 
 #js-playerPickElement {
-    padding: 20px;
+    padding: 40px;
+}
+
+#js-newGameButton {
+    width: 90px;
+    height: 90px;
+    border-radius: 50px;
+}
+
+h3 {
+
+    font-size: 40px;
+    font-family: 'Indie Flower', cursive;
+}
+
+button {
+    width: 150px;
+    height: 100px;
+    background-color: darksalmon;
+
+}
+
+.badge {
+    width: 70px;
+    height: 60px;
+    font-size: 50px;
+    border-radius: 30px;
+}
+
+#js-playerPick {
+    font-size: 25px;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+#js-computerPick {
+    font-size: 25px;
+    font-family: 'Gloria Hallelujah', cursive;
+
+}
+
+#js-playerResult {
+    color: darksalmon;
+    font-size: 40px;
+    font-family: 'Berkshire Swash', cursive;
+}
+
+#js-computerResult {
+    color: darksalmon;
+    font-size: 40px;
+    font-family: 'Berkshire Swash', cursive;
+}
+
+#js-playerName {
+    color: rgb(160, 158, 152);
+    font-size: 30px;
+    font-family: 'Inconsolata', monospace;
+}
+
+.text-center {
+    color: rgb(160, 258, 155);
+    font-size: 30px;
+    font-family: 'Inconsolata', monospace;
 }
